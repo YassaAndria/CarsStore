@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars Collection - Luxury Cars</title>
+    <link rel="stylesheet" href="styles/cars.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">LuxuryCars</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cars.html">Cars</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="header-content">
+            <h1>Premium Car Collection</h1>
+            <p>Discover our exclusive range of luxury and sports cars</p>
+        </div>
+    </section>
+
+    <section class="cars-section">
+        <h2 class="section-title">Available Models</h2>
+        <div class="cars-grid">
+
+            <div class="car-card">
+                <img src="./images/Ferrari sports car_.jpeg" alt="Ferrari SF90" class="car-image">
+                <div class="car-info">
+                    <h3 class="car-name">Ferrari SF90 Stradale</h3>
+                    <div class="car-details">Hybrid Sports Car • 986 HP • 0-60 mph in 2.5s</div>
+                    <div class="car-price">$625,000</div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart({name: 'Ferrari SF90 Stradale', price: 625000, image: './images/Ferrari sports car_.jpeg'})">Add
+                        to Cart</button>
+                </div>
+            </div>
+
+
+            <div class="car-card">
+                <img src="./images/blue car isolated on white background Stock Photo.jpeg" alt="Lamborghini Aventador"
+                    class="car-image">
+                <div class="car-info">
+                    <h3 class="car-name">Lamborghini Aventador SVJ</h3>
+                    <div class="car-details">V12 Engine • 759 HP • Limited Edition</div>
+                    <div class="car-price">$517,000</div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart({name: 'Lamborghini Aventador SVJ', price: 517000, image: './images/blue car isolated on white background Stock Photo.jpeg'})">Add
+                        to Cart</button>
+                </div>
+            </div>
+
+            <div class="car-card">
+                <img src="./images/BHAIIS CAARAZ.jpeg" alt="Porsche 911" class="car-image">
+                <div class="car-info">
+                    <h3 class="car-name">Porsche 911 Turbo S</h3>
+                    <div class="car-details">Turbocharged • 640 HP • All-Wheel Drive</div>
+                    <div class="car-price">$207,000</div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart({name: 'Porsche 911 Turbo S', price: 207000, image: './images/BHAIIS CAARAZ.jpeg'})">Add
+                        to Cart</button>
+                </div>
+            </div>
+
+
+            <div class="car-card">
+                <img src="./images/2.jpeg" alt="McLaren 720S"
+                    class="car-image">
+                <div class="car-info">
+                    <h3 class="car-name">McLaren 720S Spider</h3>
+                    <div class="car-details">Convertible • 710 HP • Carbon Fiber Body</div>
+                    <div class="car-price">$715,000</div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart({name: 'McLaren 720S Spider', price: 715000, image: src='./images/2.jpeg'})">Add
+                        to Cart</button>
+                </div>
+            </div>
+
+
+            <div class="car-card">
+                <img src="./images/3.jpeg" alt="Audi R8" class="car-image">
+                <div class="car-info">
+                    <h3 class="car-name">Audi R8 V10 Plus</h3>
+                    <div class="car-details">V10 Engine • 610 HP • Quattro AWD</div>
+                    <div class="car-price">$189,900</div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart({name: 'Audi R8 V10 Plus', price: 189900, image: './images/3.jpeg'})">Add
+                        to Cart</button>
+                </div>
+            </div>
+
+
+            <div class="car-card">
+                <img src="./images/BMW Wallpaper.jpeg" alt="BMW M8" class="car-image">
+                <div class="car-info">
+                    <h3 class="car-name">BMW M8 Competition</h3>
+                    <div class="car-details">Twin-Turbo • 617 HP • Luxury Coupe</div>
+                    <div class="car-price">$147,000</div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart({name: 'BMW M8 Competition', price: 147000, image: './images/BMW Wallpaper.jpeg'})">Add
+                        to Cart</button>
+                </div>
+            </div>
+            <div class="car-card">
+                <img src="./images/download (4).jpeg" alt="BMW M8" class="car-image">
+                <div class="car-info">
+                    <h3 class="car-name">BMW M8 Competition</h3>
+                    <div class="car-details">Twin-Turbo • 617 HP • Luxury Coupe</div>
+                    <div class="car-price">$147,000</div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart({name: 'BMW M8 Competition', price: 147000, image: './images/download (4).jpeg'})">Add
+                        to Cart</button>
+                </div>
+            </div>
+            <div class="car-card">
+                <img src="./images/download.jpeg" alt="BMW M8" class="car-image">
+                <div class="car-info">
+                    <h3 class="car-name">BMW Z4 Roadster</h3>
+                    <div class="car-details">Twin-Turbo • 617 HP • Luxury Coupe</div>
+                    <div class="car-price">$190,000</div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart({name: 'BMW Z4 Roadster', price: 190000, image: './images/download.jpeg'})">Add
+                        to Cart</button>
+                </div>
+            </div>
+            <div class="car-card">
+                <img src="./images/Joker BGM - Unleash the Inner Chaos (Bass Boosted) _ Feel the Anarchy!.jpeg"
+                    alt="BMW M8" class="car-image">
+                <div class="car-info">
+                    <h3 class="car-name">BMW M340i</h3>
+                    <div class="car-details">Twin-Turbo • 617 HP • Luxury Coupe</div>
+                    <div class="car-price">$160,000</div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart({name: 'BMW M340i', price: 160000, image: './images/Joker BGM - Unleash the Inner Chaos (Bass Boosted) _ Feel the Anarchy!.jpeg'})">Add
+                        to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 LuxuryCars. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function addToCart(car) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            
+            const existingItem = cart.find(item => item.name === car.name);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    ...car,
+                    id: Date.now(),
+                    quantity: 1
+                });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            const button = event.target;
+            const originalText = button.textContent;
+            button.textContent = 'Added!';
+            button.style.background = '#28a745';
+
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '';
+            }, 1500);
+        }
+    </script>
+</body>
+
+</html>

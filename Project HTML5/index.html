@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Cars - Premium Automotive Experience</title>
+    <link rel="stylesheet" href="styles/home.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">LuxuryCars</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cars.html">Cars</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Experience Luxury on Wheels</h1>
+            <p>Discover the finest collection of luxury and sports cars. Premium quality, unmatched performance, and
+                elegant design.</p>
+            <a href="cars.html" class="cta-button">Explore Collection</a>
+        </div>
+    </section>
+
+    <section class="featured-section">
+        <h2 class="section-title">Featured Luxury Cars</h2>
+        <div class="cars-grid">
+            <div class="car-card">
+                <img src="./images/Porsche.jpeg" alt="Ferrari SF90" class="car-image">
+                <div class="car-info">
+                    <h3 class="car-name">Ferrari SF90 Stradale</h3>
+                    <div class="car-price">$625,000</div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart({name: 'Ferrari SF90 Stradale', price: 625000, image: 'images/BMW Wallpaper.jpeg'})">Add
+                        to Cart</button>
+                </div>
+            </div>
+
+            <div class="car-card">
+                <img src="./images/download (2).jpeg" alt="Lamborghini Aventador" class="car-image">
+                <div class="car-info">
+                    <h3 class="car-name">Lamborghini Aventador SVJ</h3>
+                    <div class="car-price">$517,000</div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart({name: 'Lamborghini Aventador SVJ', price: 517000, image: './images/download (2).jpeg'})">Add
+                        to Cart</button>
+                </div>
+            </div>
+
+            <div class="car-card">
+                <img src="./images/Porsche wallpaper.jpeg" alt="Porsche 911" class="car-image">
+                <div class="car-info">
+                    <h3 class="car-name">Porsche 911 Turbo S</h3>
+                    <div class="car-price">$207,000</div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart({name: 'Porsche 911 Turbo S', price: 207000, image: './images/Porsche wallpaper.jpeg'})">Add
+                        to Cart</button>
+                </div>
+            </div>
+            <div class="car-card">
+                <img src="./images/job.jpeg" alt="Porsche 911" class="car-image">
+                <div class="car-info">
+                    <h3 class="car-name">BMW M4 Competition</h3>
+                    <div class="car-price">$207,000</div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart({name: 'BMW M4 Competition', price: 207000, image: './images/job.jpeg'})">Add
+                        to Cart</button>
+                </div>
+
+            </div>
+            <div class="car-card">
+                <img src="./images/White MBW M4 2021 - Forza Horizon.jpeg" alt="Porsche 911" class="car-image">
+                <div class="car-info">
+                    <h3 class="car-name">BMW M4</h3>
+                    <div class="car-price">$220,000</div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart({name: 'BMW M4', price: 220000, image: './images/White MBW M4 2021 - Forza Horizon.jpeg'})">Add
+                        to Cart</button>
+                </div>
+
+            </div>
+            <div class="car-card">
+                <img src="./images/download (1).jpeg" alt="Porsche 911" class="car-image">
+                <div class="car-info">
+                    <h3 class="car-name">Mercedes-AMG GT</h3>
+                    <div class="car-price">$290,000</div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart({name: 'Mercedes-AMG GT', price: 290000, image: './images/download (1).jpeg'})">Add
+                        to Cart</button>
+                </div>
+
+            </div>
+    </section>
+    <section class="contact" id="Contact">
+        <h2 class="section-title">Contact Us</h2>
+
+        <div class="contact-container">
+
+
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+
+                <form>
+                    <label>Name</label>
+                    <input type="text" placeholder="Your Name">
+
+                    <label>Email</label>
+                    <input type="email" placeholder="Your Email">
+
+                    <label>Subject</label>
+                    <input type="text" placeholder="Subject">
+
+                    <label>Message</label>
+                    <textarea placeholder="Your Message"></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+
+
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+
+                <p>📍 Luxor City, BC 12345</p>
+                <p>📞 +201203680360</p>
+                <p>✉️ yassa.andri@gmail.com</p>
+                <p>🕒 Mon - Sat: 8:00 AM - 6:00 PM</p>
+                <p>🕒 Sunday: 9:00 AM - 4:00 PM</p>
+
+                <div class="map-box">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7190.57612898632!2d32.64819918989401!3d25.694884732725505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2seg!4v1769077585093!5m2!1sar!2seg"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 LuxuryCars. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function addToCart(car) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ ...car, id: Date.now(), quantity: 1 });
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            
+            alert(`${car.name} added to cart!`);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Luxury Cars</title>
+    <link rel="stylesheet" href="styles/cart.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">LuxuryCars</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cars.html">Cars</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="header-content">
+            <h1>Your Shopping Cart</h1>
+            <p>Review your selected luxury vehicles</p>
+        </div>
+    </section>
+
+    <div class="cart-container">
+        <div class="cart-header">
+            <h2>Selected Vehicles</h2>
+        </div>
+
+        <div class="cart-items" id="cartItems">
+
+        </div>
+
+        <div class="cart-summary">
+            <div class="summary-row">
+                <span>Subtotal:</span>
+                <span id="subtotal">$0.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Tax (8%):</span>
+                <span id="tax">$0.00</span>
+            </div>
+            <div class="summary-row total-row">
+                <span>Total:</span>
+                <span class="total-amount" id="total">$0.00</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 LuxuryCars. All rights reserved.</p>
+    </footer>
+
+    <script>
+
+        function loadCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cartItems');
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="empty-cart">
+                        <h3>Your cart is empty</h3>
+                        <p>Add some luxury cars to get started!</p>
+                        <a href="cars.html" class="continue-shopping">Continue Shopping</a>
+                    </div>
+                `;
+                updateTotals();
+                return;
+            }
+
+            cartItemsContainer.innerHTML = cart.map(item => `
+        <div class="cart-item" data-id="${item.id}">
+        <img src="${item.image}" alt="${item.name}" class="item-image">
+        <div class="item-details">
+            <div class="item-name">${item.name}</div>
+            <div class="item-price">$${item.price.toLocaleString()}</div>
+        </div>
+        <div class="item-controls">
+            <div class="quantity-control">
+                <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
+                <span class="quantity-display">${item.quantity}</span>
+                <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+            </div>
+            <button class="remove-btn" onclick="removeFromCart(${item.id})">Remove</button>
+        </div>
+    </div>
+`).join('');
+
+            updateTotals();
+        }
+
+
+        function updateQuantity(itemId, change) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const itemIndex = cart.findIndex(item => item.id === itemId);
+
+            if (itemIndex !== -1) {
+                cart[itemIndex].quantity += change;
+
+                if (cart[itemIndex].quantity <= 0) {
+                    cart.splice(itemIndex, 1);
+                } else {
+                    cart[itemIndex].quantity = Math.max(1, cart[itemIndex].quantity);
+                }
+
+                localStorage.setItem('cart', JSON.stringify(cart));
+                loadCart();
+            }
+        }
+
+
+        function removeFromCart(itemId) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart = cart.filter(item => item.id !== itemId);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+
+        function updateTotals() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const tax = subtotal * 0.08;
+            const total = subtotal + tax;
+
+            document.getElementById('subtotal').textContent = `$${subtotal.toLocaleString()}`;
+            document.getElementById('tax').textContent = `$${tax.toLocaleString()}`;
+            document.getElementById('total').textContent = `$${total.toLocaleString()}`;
+        }
+
+        document.getElementById('checkoutBtn').addEventListener('click', function () {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+
+            alert('Thank you for your order! Your luxury cars will be delivered soon.');
+
+            localStorage.removeItem('cart');
+            loadCart();
+        });
+
+        document.addEventListener('DOMContentLoaded', loadCart);
+    </script>
+</body>
+
+</html>
